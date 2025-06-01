@@ -1,0 +1,17 @@
+#question-div{
+    display: flex;
+    justify-content: center;
+    /* background-color: aqua; */
+}
+#longtext{
+    background-color:transparent;
+    border: none;
+    width:60%;
+    border-bottom: 1px solid black;
+}
+#marks-box{
+    width:30px;
+    margin-right: 10px;
+    border:none;
+    border-bottom: 1px solid black;
+}
