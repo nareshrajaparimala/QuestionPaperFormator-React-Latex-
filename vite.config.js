@@ -7,6 +7,6 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',   // 👈 Required for Docker
     port: 5173,        // 👈 Optional, default is 5173
-    strictPort: true   // 👈 Prevent port fallback
+    strictPort: true   
   }
 })
