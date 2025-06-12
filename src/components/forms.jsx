@@ -3,17 +3,25 @@ import Section from './section';
 import './forms.css';
 
 function Forms(){
-const [count, setCount]=useState(1);
-const handleSection=(e)=>{
-    setCount(e.target.value);
-    // console.log(e.target.value);
-};
+// const [count, setCount]=useState(0);
+// const handleSection=(e)=>{
+//     setCount(e.target.value);
+//     // console.log(e.target.value);
+// };
 // collection of all data in form
 const [formData, setFormData]=useState({
     department:'',
     pageTitle:'',
     semester:'',
-
+    subjectName:'',
+    subjectCode:'',
+    duration:'',
+    maxMarks:'',
+    date:'',
+    fromTime:'',
+    toTime:'',
+    generalInstruction:'',
+    sectionPart:'',
 
 });
 const handleChange=(e)=>{
@@ -53,53 +61,53 @@ return (
           </tr>
           <tr>
             <th><label htmlFor="">Subject Name: </label></th>
-            <td><input type="text" className='title'/></td>
+            <td><input type="text" className='title'name="subjectName" value={formData.subjectName} onChange={handleChange}/></td>
           </tr>
           <tr>
             <th><label htmlFor="">Subject code: </label></th>
-            <td><input type="text" className='title'/></td> 
+            <td><input type="text" className='title' name="subjectCode" value={formData.subjectCode} onChange={handleChange}/></td> 
           </tr>
           <tr>
             <th><label htmlFor="">Duration(Minutes): </label></th>
-            <td><input type="number" className='title'/></td> 
+            <td><input type="number" className='title'name="duration" value={formData.duration} onChange={handleChange}/></td> 
           </tr>
           <tr>
             <th><label htmlFor="">Max Marks: </label></th>
-            <td><input type="number" className='title'/></td> 
+            <td><input type="number" className='title'name="maxMarks" value={formData.maxMarks} onChange={handleChange}/></td> 
           </tr>
           <tr>
             <th><label htmlFor="">Date : </label></th>
-            <td><input type="date" className='title'/></td> 
+            <td><input type="date" className='title' name="date" value={formData.date} onChange={handleChange}/></td> 
           </tr>
           <tr>
             <th><label htmlFor="">Time </label></th>
             <td id="time-box">
               <div>
                 <label htmlFor=""><b>From:</b></label>
-                <input type="time" className='time-box'/> 
+                <input type="time" className='time-box'name="fromTime" value={formData.fromTime} onChange={handleChange}/> 
               </div>
               <div>
                 <label htmlFor=""><b>To:</b> </label>
-                <input type="time" className='time-box'/> 
+                <input type="time" className='time-box'name="toTime" value={formData.toTime} onChange={handleChange}/> 
               </div>
             </td> 
           </tr>
           <tr>
             <th>General Instruction:</th>
-            <td><textarea name="" id="GI"></textarea></td>
+            <td><textarea  id="GI" name="generalInstruction" value={formData.generalInstruction} onChange={handleChange}></textarea></td>
           </tr>
           <tr>
             <th>No. of Section: </th>
-            <td><input type="number" className="title" onChange={handleSection}/></td>
+            <td><input type="number" className="title" name="sectionPart" value={formData.sectionPart} onChange={handleChange}/></td>
           </tr>
         </table>
     </div>
     {/* question sector */}
 
-        <Section key={count} index={count} />
+        <Section key={formData.sectionPart} index={formData.sectionPart} />
       
         {/* <button className="submit-but">Submit</button> */}
-        <button className="submit-but">Print</button>
+        <button className="submit-but" type="submit">Print</button>
         </form>
 </div>
     );

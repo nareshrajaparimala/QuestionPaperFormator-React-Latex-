@@ -1,15 +1,15 @@
-#question-div{
+.question-div{
     display: flex;
     justify-content: center;
     /* background-color: aqua; */
 }
-#longtext{
+.longtext{
     background-color:transparent;
     border: none;
     width:60%;
     border-bottom: 1px solid black;
 }
-#marks-box{
+.marks-box{
     width:30px;
     margin-right: 10px;
     border:none;
