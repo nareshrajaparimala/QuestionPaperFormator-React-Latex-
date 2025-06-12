@@ -3,12 +3,7 @@ import Section from './section';
 import './forms.css';
 
 function Forms(){
-// const [count, setCount]=useState(0);
-// const handleSection=(e)=>{
-//     setCount(e.target.value);
-//     // console.log(e.target.value);
-// };
-// collection of all data in form
+
 const [formData, setFormData]=useState({
     department:'',
     pageTitle:'',
@@ -21,13 +16,14 @@ const [formData, setFormData]=useState({
     fromTime:'',
     toTime:'',
     generalInstruction:'',
-    sectionPart:'',
+    sectionPart:0,
+    sectionQuestions:[],
 
 });
 const handleChange=(e)=>{
     const {name , value}=e.target;
     setFormData((prev)=>({...prev,[name]:value}));
-    console.log(value);
+    // console.log(value);
 };
 
 
@@ -104,9 +100,10 @@ return (
     </div>
     {/* question sector */}
 
-        <Section key={formData.sectionPart} index={formData.sectionPart} />
+        <Section  index={formData.sectionPart} setFormData={setFormData} handleChange={handleChange} />
       
         {/* <button className="submit-but">Submit</button> */}
+        <button type='button'onClick={()=>console.log(formData)}></button>
         <button className="submit-but" type="submit">Print</button>
         </form>
 </div>
